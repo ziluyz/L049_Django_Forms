@@ -1,0 +1,32 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+    <title>Добавить фильм</title>
+{% endblock %}
+
+{% block content%}
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Добавьте новый фильм</h1>
+        <div class="card bg-dark text-light">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Название фильма</label>
+                        {{ form.title }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Описание фильма</label>
+                        {{ form.description }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="review" class="form-label">Отзыв о фильме</label>
+                        {{ form.review }}
+                    </div>
+                    <button type="submit" class="btn btn-warning">Добавить фильм</button>
+                </form>
+                <p class="text-danger mt-2">{{ error }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

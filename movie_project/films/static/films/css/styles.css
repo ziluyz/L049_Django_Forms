@@ -1,0 +1,49 @@
+body {
+    background-color: #121212;
+    color: #faea00;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+.card-title {
+    font-family: 'Playfair Display', serif;
+    color: #faea00;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #faea00;
+    border-radius: 10px;
+}
+
+.card-body {
+    position: relative;
+    padding: 20px;
+}
+
+.card-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #faea00;
+}
+
+.card-text {
+    margin-top: 20px;
+}
+
+.card-text:first-of-type {
+    margin-top: 10px;
+}
+
+.card-text::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #faea00;
+}
